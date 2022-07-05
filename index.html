@@ -2,9 +2,57 @@
     <head>
         <script>
             // your function goes here. Show examples of how to use the function.
+            
+            function execute(){
+                //get paragraphs in the div
+                var paragraph = document.getElementsByTagName("p")
+                paragraphList = []
+                for (x=0; x<paragraph.length - 1; x++){
+                    paragraphList.push(paragraph[x])
+                }
+
+                //get spans in the div
+                var span = document.getElementsByTagName("span")
+                spanList = []
+                for (x=0; x<span.length - 1; x++){
+                    spanList.push(span[x])
+                }
+
+                //replace p with h3
+                for (x=0; x<paragraph.length -1; x++){
+                    paragraphList[x].outerHTML = paragraphList[x].outerHTML.replace("p","h3")
+                }
+
+                //replace span with h4
+                for (x=0; x<span.length; x++){
+                    spanList[x].outerHTML = spanList[x].outerHTML.replace("span","h4")
+                }
+
+                //get h2,h3 and h4 list
+                var heading2 = document.getElementsByTagName("h2")
+                headings2List = []
+                for (x=0; x<heading2.length; x++){
+                    headings2List.push(heading2[x])
+                }
+                var heading3 = document.getElementsByTagName("h3")
+                headings3List = []
+                for (x=0; x<heading3.length; x++){
+                    headings3List.push(heading3[x])
+                }
+                var heading4 = document.getElementsByTagName("h4")
+                headings4List = []
+                for (x=0; x<heading4.length; x++){
+                    headings4List.push(heading4[x])
+                }
+
+                //return all headings in div
+                var headings = document.querySelectorAll("h2,h3,h4")
+                console.log(headings)
+            }
+
         </script>
     </head>
-    <body>
+    <body onload="execute()">
         <h1>Sample page</h1>
         <div id="row">
             <div id="col1">
